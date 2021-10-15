@@ -28,6 +28,8 @@ namespace hiq_coding_test
         {
             services.AddControllers();
 
+            services.AddCors();
+
             services.AddTransient<IFileUploadService, FileUploadService>();
         }
 
@@ -42,6 +44,13 @@ namespace hiq_coding_test
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // CORS
+            app.UseCors(x => x
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .SetIsOriginAllowed(origin => true) // allow any origin
+               .AllowCredentials()); // allow credentials
 
             app.UseAuthorization();
 
