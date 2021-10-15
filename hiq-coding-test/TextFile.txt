@@ -1,0 +1,24 @@
+﻿How long time did you end up spending on this coding test?
+
+I didn't count the hours I spent. I am working fulltime for the momemnt and have been spending every evening over a week so I could guess It took about 16 - 18 hours. 
+I had to look up alot on google to refresh up the memory on some things which took abit off time aswell.
+
+
+
+Explain why you chose the code structure(s) you used in your solution.
+
+My solution was a controller which recieved a post request with a formdata body from the frontend. I have a service which checks file extension on the file to be of type ".txt" and some logic which extract most used word from uploaded textfile 
+and returns an object with number of times the most used word have been used and the text with modifications towards the most used words. I have a very very basic frontend due to lack of time. 
+Which basically selects a file from your desktop and post it to the api and prints out the response.
+
+
+
+What would you add to your solution if you had more time? This question is especially important if you did not spend much time on the coding test - use this as an opportunity to explain what your solution is missing.
+
+I would add more error handling. Check for multiple extensions instead of just ".txt". Handle "what if" scenarios. Check the textfile content for characters. That it only contains "A-Z" and not for example japanese letters. 
+I would throw more specific errors with messages to be recived by the frontend and be shown as a message in the ui.  
+
+
+
+What did you think of this recruitment test?
+It was a good recruitment test. It was a good recap for me and got to try some new things like reading from a file. I just wish I had more time to be able to do more code and error handling. I just made it work and very basic  
