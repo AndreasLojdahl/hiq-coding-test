@@ -26,31 +26,20 @@ namespace hiq_coding_test.Controllers
         [Consumes("multipart/form-data")]
         public IActionResult UploadFile([FromForm] IFormFile file)
         {
-         
-            {
                 var isAcceptedFile = _fileUploadService.CheckIfAcceptedFileType(file);
-                Console.WriteLine(isAcceptedFile);
-                Console.WriteLine(file.FileName);
                 if (isAcceptedFile)
                 {
-                    return Ok();
+                    var processedFile = _fileUploadService.ProccessFile(file);
+                    return Ok(processedFile);
                 }
                 else
                 {
                     return new StatusCodeResult(StatusCodes.Status400BadRequest);
                 }
-            }
-            try
-            {
-                return null;
-                
-            }
-            catch
-            {
-                return new StatusCodeResult(StatusCodes.Status400BadRequest);
-
-            }
+            
         }
+
+
 
   
     }
